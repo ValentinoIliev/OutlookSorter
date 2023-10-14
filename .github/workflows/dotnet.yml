@@ -22,8 +22,8 @@ jobs:
         run: dotnet build --configuration Release
       
       - name: Publish Artifacts
-          uses: actions/upload-artifact@v2
-          with:
+        uses: actions/upload-artifact@v2
+        with:
             name: OutlookSorter
             path: ./app
 

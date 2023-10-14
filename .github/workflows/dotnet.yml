@@ -20,10 +20,11 @@ jobs:
 
       - name: Build the project
         run: dotnet build --configuration Release
-      
+
+      - name: Publish the project
+        run: dotnet publish -c Release -o ./app
       - name: Publish Artifacts
         uses: actions/upload-artifact@v2
         with:
-            name: OutlookSorter
-            path: ./app
-
+          name: OutlookSorter
+          path: ./app

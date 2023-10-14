@@ -23,4 +23,9 @@ jobs:
 
       - name: Publish the project
         run: dotnet publish -c Release -o ./app
+      - name: Publish Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: OutlookSorter
+          path: ./app
 

@@ -20,12 +20,15 @@ jobs:
 
       - name: Build the project
         run: dotnet build --configuration Release
+        
+      - name: Set variables
+        id: set-variables
+        run: |
+          echo "##vso[task.setvariable variable=artifact_name]OutlookSorter-v1.$GITHUB_RUN_NUMBER"
+        shell: bash
 
-      - name: Publish the project
-        run: dotnet publish -c Release -o ./app
       - name: Publish Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: OutlookSorter
+          name: ${{ steps.set-variables.outputs.artifact_name }}
           path: ./app
-

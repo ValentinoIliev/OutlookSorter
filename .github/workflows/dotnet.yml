@@ -16,7 +16,7 @@ jobs:
       - name: Set up .NET Core 7.3
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 7.3.0
+          dotnet-version: 7.0.1
 
       - name: Build the project
         run: dotnet build --configuration Release

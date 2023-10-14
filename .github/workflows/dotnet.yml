@@ -13,10 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up .NET Core 7.3
+      - name: Set up .NET Core 7.0.101
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 7.0.1
+          dotnet-version: 7.0.101
 
       - name: Build the project
         run: dotnet build --configuration Release
